@@ -2,14 +2,14 @@ package sample;
 
 public class ThreadSafe {
 
-    private static DoubleCheckLocking instance;
+    private static ThreadSafe instance;
 
     private ThreadSafe() {
     }
 
-    public static synchronized DoubleCheckLocking getInstance() {
+    public static synchronized ThreadSafe getInstance() {
         if (instance == null) {
-            instance = new DoubleCheckLocking();
+            instance = new ThreadSafe();
         }
         return instance;
     }
